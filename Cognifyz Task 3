@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Model S</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .card-image img {
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Car Ad Webpage</h1>
+            
+            <div class="columns">
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="Car 3.jpg" alt="Tesla Model S">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title is-4">2023 Tesla Model S</p>
+                            <p class="subtitle is-6">$79,990</p>
+                            <div class="content">
+                                The 2023 Tesla Model S is a high-performance electric car with long range and advanced features.
+                            </div>
+                            <button class="button is-primary" id="colorButton" onclick="changeColor()">Click to change color!</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h2 class="title">Greeting Alert</h2>
+                    <button class="button is-info" onclick="showGreeting()">Show Greeting</button>
+                    
+                    <h2 class="title mt-4">Basic Calculator</h2>
+                    <div class="field">
+                        <div class="control">
+                            <input class="input" type="number" id="num1" placeholder="Enter first number">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <input class="input" type="number" id="num2" placeholder="Enter second number">
+                        </div>
+                    </div>
+                    <button class="button is-success" onclick="calculateSum()">Add</button>
+                    <p id="result" class="mt-2"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bulma JS is not necessary for this example -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Function to change the color of the button
+        function changeColor() {
+            const button = document.getElementById('colorButton');
+            button.classList.toggle('is-danger');
+        }
+
+        // Function to show a greeting message based on the current time
+        function showGreeting() {
+            const now = new Date();
+            const hours = now.getHours();
+            let greeting;
+
+            if (hours < 12) {
+                greeting = 'Good Morning!';
+            } else if (hours < 18) {
+                greeting = 'Good Afternoon!';
+            } else {
+                greeting = 'Good Evening!';
+            }
+
+            alert(greeting);
+        }
+
+        // Function to calculate the sum of two numbers
+        function calculateSum() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const sum = num1 + num2;
+            document.getElementById('result').innerText = 'Result: ' + sum;
+        }
+    </script>
+</body>
+</html>
