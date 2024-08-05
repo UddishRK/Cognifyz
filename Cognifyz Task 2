@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Ad Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        .car-ad {
+            border: 1px solid #ddd;
+            padding: 20px;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+        #colorButton {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .calculator input {
+            margin: 5px;
+            padding: 5px;
+        }
+        .calculator button {
+            padding: 5px 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tesla Model S</h1>
+    </header>
+
+    <div class="content">
+        <div class="car-ad">
+            <h2>2023 Tesla Model S</h2>
+            <p>Price: $79,990</p>
+            <img src="Car 55.jpg" alt="Tesla Model S">
+            <p>The 2023 Tesla Model S is a high-performance electric car with long range and advanced features.</p>
+            <button id="colorButton" onclick="changeColor()">Click to change color!</button>
+        </div>
+
+        <h2>Greeting Alert</h2>
+        <button onclick="showGreeting()">Show Greeting</button>
+
+        <div class="calculator">
+            <h2>Basic Calculator</h2>
+            <input type="number" id="num1" placeholder="Enter first number">
+            <input type="number" id="num2" placeholder="Enter second number">
+            <button onclick="calculateSum()">Add</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script>
+        // Function to change the color of the button
+        function changeColor() {
+            const button = document.getElementById('colorButton');
+            button.style.backgroundColor = button.style.backgroundColor === 'blue' ? 'red' : 'blue';
+        }
+
+        // Function to show a greeting message based on the current time
+        function showGreeting() {
+            const now = new Date();
+            const hours = now.getHours();
+            let greeting;
+
+            if (hours < 12) {
+                greeting = 'Good Morning!';
+            } else if (hours < 18) {
+                greeting = 'Good Afternoon!';
+            } else {
+                greeting = 'Good Evening!';
+            }
+
+            alert(greeting);
+        }
+
+        // Function to calculate the sum of two numbers
+        function calculateSum() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const sum = num1 + num2;
+            document.getElementById('result').innerText = 'Result: ' + sum;
+        }
+    </script>
+</body>
+</html>
